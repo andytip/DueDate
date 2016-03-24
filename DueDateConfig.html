@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example Configuration</title>
+    <title>Due Date Configuration</title>
    
   </head>
   <body>
@@ -65,14 +65,14 @@
   
   (function() {
     var showlocations = document.getElementById('KEY_SHOWLOCATION_checkbox');
-    var duedate = document.getElementById('KEY_SHOWLOCATION_checkbox');
+    var duedate = document.getElementById('KEY_DUEDATE_TEXT');
     // Load any previously saved configuration, if available
     if(localStorage['KEY_SHOWLOCATION']) {
       showlocations.checked = JSON.parse(localStorage['KEY_SHOWLOCATION']);
       //backgroundColorPicker.value = localStorage['background_color'];
     }
-    if(localStorage['KEY_DUEDATE_TEXT']) {
-      duedate.value = localStorage['KEY_DUEDATE_TEXT'];
+    if(localStorage['KEY_DUEDATE']) {
+      duedate.value = localStorage['KEY_DUEDATE'];
     }
     
   })();
