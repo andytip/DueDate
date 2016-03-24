@@ -9,6 +9,9 @@
  <input id='KEY_SHOWLOCATION_checkbox' type='checkbox'>
   Hide Location
 </input>
+<input id='KEY_DUEDATE_TEXT' type="text">
+  Due Date
+</input>
 <input id='submit_button' type='button' value='Save'>
  <script>
   // Get a handle to the button's HTML element
@@ -18,11 +21,14 @@
   submitButton.addEventListener('click', function() {
     // Get the config data from the UI elements
     var showlocation = document.getElementById('KEY_SHOWLOCATION_checkbox');
-
+    var duedatevalue = document.getElementById('KEY_DUEDATE_TEXT');
+    var duedate = Date.parse(duedatevalue.value).getTime()/1000;
+    alert(duedate);
     // Make a data object to be sent, coercing value types to integers
     var options = {
       //'background_color': parseInt(backgroundColor.value, 16),
-      'KEY_SHOWLOCATION': showlocation.checked
+      'KEY_SHOWLOCATION': showlocation.checked,
+      'KEY_DUEDATE' : duedate
     };
 
     // Save for next launch
