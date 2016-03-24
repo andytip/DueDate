@@ -25,6 +25,10 @@
       'KEY_SHOWLOCATION': showlocation.checked
     };
 
+    // Save for next launch
+    localStorage['KEY_SHOWLOCATION'] = options['KEY_SHOWLOCATION'];
+    //localStorage['high_contrast'] = options['high_contrast'];
+
     // Determine the correct return URL (emulator vs real watch)
     function getQueryParam(variable, defaultValue) {
       var query = location.search.substring(1);
@@ -44,6 +48,16 @@
     // Encode and send the data when the page closes
     document.location = return_to + encodeURIComponent(JSON.stringify(options));
   });
+  
+  (function() {
+    var showlocations = document.getElementById('KEY_SHOWLOCATION_checkbox');
+   
+    // Load any previously saved configuration, if available
+    if(localStorage['high_contrast']) {
+      showlocations.checked = JSON.parse(localStorage['KEY_SHOWLOCATION']);
+      //backgroundColorPicker.value = localStorage['background_color'];
+    }
+  })();
 </script>
 
   </body>
