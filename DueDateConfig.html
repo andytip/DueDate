@@ -22,7 +22,7 @@
     // Get the config data from the UI elements
     var showlocation = document.getElementById('KEY_SHOWLOCATION_checkbox');
     var duedatevalue = document.getElementById('KEY_DUEDATE_TEXT');
-    alert(duedatevalue.value);
+    //alert(duedatevalue.value);
     
     var myDate=duedatevalue.value;
     myDate=myDate.split("/");
@@ -30,7 +30,7 @@
     //alert(new Date(newDate).getTime())
     
     var duedate = Math.round(new Date(newDate).getTime()/1000)
-    alert(duedate);
+    //alert(duedate);
     // Make a data object to be sent, coercing value types to integers
     var options = {
       //'background_color': parseInt(backgroundColor.value, 16),
@@ -40,6 +40,7 @@
 
     // Save for next launch
     localStorage['KEY_SHOWLOCATION'] = options['KEY_SHOWLOCATION'];
+     localStorage['KEY_DUEDATE'] = duedatevalue.value;
     //localStorage['high_contrast'] = options['high_contrast'];
 
     // Determine the correct return URL (emulator vs real watch)
@@ -64,12 +65,16 @@
   
   (function() {
     var showlocations = document.getElementById('KEY_SHOWLOCATION_checkbox');
-   
+    var duedate = document.getElementById('KEY_SHOWLOCATION_checkbox');
     // Load any previously saved configuration, if available
     if(localStorage['KEY_SHOWLOCATION']) {
       showlocations.checked = JSON.parse(localStorage['KEY_SHOWLOCATION']);
       //backgroundColorPicker.value = localStorage['background_color'];
     }
+    if(localStorage['KEY_DUEDATE_TEXT']) {
+      duedate.value = localStorage['KEY_DUEDATE_TEXT'];
+    }
+    
   })();
 </script>
 
