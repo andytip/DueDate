@@ -23,6 +23,12 @@
     var showlocation = document.getElementById('KEY_SHOWLOCATION_checkbox');
     var duedatevalue = document.getElementById('KEY_DUEDATE_TEXT');
     alert(duedatevalue.value);
+    
+    var myDate=duedatevalue.value;
+    myDate=myDate.split("/");
+    var newDate=myDate[1]+"/"+myDate[0]+"/"+myDate[2];
+    alert(new Date(newDate).getTime())
+    
     var duedate = Math.round(new Date(duedatevalue.value).getTime()/1000)
     alert(duedate);
     // Make a data object to be sent, coercing value types to integers
