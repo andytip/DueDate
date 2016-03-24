@@ -5,7 +5,7 @@
    
   </head>
   <body>
-    <p>Due Date configuration page.</p>
+    <p>Due Date Configuration</p>
  <input id='KEY_SHOWLOCATION_checkbox' type='checkbox'>
   Hide Location
 </input>
@@ -23,7 +23,7 @@
     var showlocation = document.getElementById('KEY_SHOWLOCATION_checkbox');
     var duedatevalue = document.getElementById('KEY_DUEDATE_TEXT');
     alert(duedatevalue.value);
-    var duedate = Date.parse(duedatevalue.value).getTime()/1000;
+    var duedate = Math.round(new Date(duedatevalue.value).getTime()/1000)
     alert(duedate);
     // Make a data object to be sent, coercing value types to integers
     var options = {
