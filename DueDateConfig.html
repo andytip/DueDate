@@ -42,8 +42,8 @@
       return defaultValue || false;
     }
     var return_to = getQueryParam('return_to', 'pebblejs://close#');
-    alert("Showlocation" + showlocation.checked);
-    alert(JSON.stringify(options));
+    //alert("Showlocation" + showlocation.checked);
+    //alert(JSON.stringify(options));
 
     // Encode and send the data when the page closes
     document.location = return_to + encodeURIComponent(JSON.stringify(options));
