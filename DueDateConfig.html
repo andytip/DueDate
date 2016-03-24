@@ -22,7 +22,7 @@
     // Make a data object to be sent, coercing value types to integers
     var options = {
       //'background_color': parseInt(backgroundColor.value, 16),
-      'KEY_SHOWLOCATION': KEY_SHOWLOCATION_checkbox.checked == 'true' ? 1 : 0
+      'KEY_SHOWLOCATION': KEY_SHOWLOCATION.checked == 'true' ? 1 : 0
     };
 
     // Determine the correct return URL (emulator vs real watch)
@@ -38,7 +38,7 @@
       return defaultValue || false;
     }
     var return_to = getQueryParam('return_to', 'pebblejs://close#');
-    //alert(KEY_SHOWLOCATION_checkbox.checked);
+    alert(options);
 
     // Encode and send the data when the page closes
     document.location = return_to + encodeURIComponent(JSON.stringify(options));
